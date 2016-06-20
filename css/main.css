@@ -373,10 +373,10 @@ h1 {
     border-bottom:5px solid #0DFF05;
     bottom:0px;
     font-size: 2em;
-    color: red;
+    color: yellow;
 }
 .media-text {
-    color: red;
+    color: green;
 }
 .image-row {
     margin: 10px;
