@@ -66,6 +66,19 @@ img {
     max-width: 100%;
     height: auto;
 }
+.alumni {
+    padding-top: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+.alumni2 {
+    text-align: center;
+}
+.alumni3 {
+    text-align: center;
+    padding-bottom: 20px;
+}
 h1, h2, h3, h4, h5 {
     color: #000;
     font-family: 'proxima-nova', Georgia, Times, serif;
