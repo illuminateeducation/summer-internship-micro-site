@@ -31,6 +31,8 @@
 
 body {
     background: #fff;
+    background-image:url('http://www.intrawallpaper.com/static/images/abstract-mosaic-background.png');
+    background-size: 100% 100%;
     color: #333;
     font-family: 'proxima-nova', Helvetica, Arial, sans-serif !important;
     font-weight: 400;
@@ -354,4 +356,17 @@ h1 {
     .container {
         width: 1170px;
     }
+}
+.header-text {
+    border-top:5px solid #0DFF05;
+    border-bottom:5px solid #0DFF05;
+    bottom:0px;
+    font-size: 2em;
+    color: red;
+}
+.media-text {
+    color: red;
+}
+.image-row {
+    margin: 10px;
 }
