@@ -1,1 +1,1 @@
-# summer-internship-micro-site
+# Illuminate Education Summer Internship Microsite
