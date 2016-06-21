@@ -73,13 +73,14 @@
             <div class="text-container">
                 <h1>Media</h1>
             </div>
-            <div class="row header-text">
-              
-            <div class="col-sm-6">class of 2016!</div>
-            <div class="col-sm-6">Summer intership </div>
-        </div>
         </div>
       
+
+            <div class="row header-text">
+                <div class="col-sm-6">Class of 2016!</div>
+                <div class="col-sm-6">Summer intership </div>
+            </div>
+
         <div class="container"><br />
             <div class="row" style="background-color: rgba(255,255,255,0.25); border-radius: 10px; padding: 10px;">
                 <div class="col-sm-6">
@@ -104,10 +105,7 @@
                     work of our interns.If you have questions please chek the about section.Thankyou for cheking our website.
                 </div>
                 <div class="col-sm-6">
-                    <video width="400" controls>
-                        <source src="mov_bbb.mp4" type="video/mp4">
-                        Your browser does not support HTML5 video.
-                    </video> 
+                    <img src="" id="image-flipper" />
                 </div>
             </div><br />
             
@@ -252,6 +250,20 @@
         </div>
     </footer>
 </div>
+
+<script>
+$(function() {
+    var image_arr = $('.image-row img'),
+        image_counter = 0;
+        
+    alert('array count' + image_arr.length);
+    
+    $('#image-flipper').src = image_arr[0].src;    
+    setInterval(function() {
+        
+    }, 3000);
+});
+</script>
 
 </body>
 </html>

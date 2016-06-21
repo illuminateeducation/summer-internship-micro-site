@@ -369,11 +369,11 @@ h1 {
     }
 }
 .header-text {
-    border-top:5px solid #0DFF05;
-    border-bottom:5px solid #0DFF05;
+    border-top:5px solid #48E8D3;
+    border-bottom:5px solid #48E8D3;
     bottom:0px;
     font-size: 2em;
-    color: yellow;
+    color: black;
 }
 .media-text {
     color: green;
