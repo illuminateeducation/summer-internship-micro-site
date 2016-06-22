@@ -75,11 +75,12 @@
             </div>
         </div>
       
-
-            <div class="row header-text">
-                <div class="col-sm-6">Class of 2016!</div>
-                <div class="col-sm-6">Summer intership </div>
-            </div>
+        <!--
+        <div class="row header-text">
+            <div class="col-sm-6">Class of 2016!</div>
+            <div class="col-sm-6">Summer intership </div>
+        </div>
+        -->
 
         <div class="container"><br />
             <div class="row" style="background-color: rgba(255,255,255,0.25); border-radius: 10px; padding: 10px;">
@@ -93,11 +94,6 @@
                 </div>
             </div><br />
               
-           
-<!--           <div class="row">
-                 <div class="col-sm-12"><img src="http://www.bluemangolearning.com/images/ui/customers/illuminate.png" />
-                </div>
-           </div>-->
             <div class="row" style="background-color: rgba(255,255,255,0.25); border-radius: 10px; padding: 10px;">
                 <div class="col-sm-6"> 
                     In this video you are going to see intership memories and pictures. It is a picture video of all that we 
@@ -105,18 +101,21 @@
                     work of our interns.If you have questions please chek the about section.Thankyou for cheking our website.
                 </div>
                 <div class="col-sm-6">
-                    <img src="" id="image-flipper" />
+                    <div align="right"><img id="image-flipper" /></div>
                 </div>
             </div><br />
             
-             <div class="row image-row">
-                <div class="col-sm-3"><img src="./images/media-images/thumbs/summer-code-camp-1.jpg"></img></div>
+            <div align="center">
+                <h2 style="margin-bottom: 0px; padding-bottom: 0px;">Photos from the Class of 2016!</h2>
+                <small>Click a photo to enlarge it.</small>
+            </div>
+            <div class="row image-row">
+                <div class="col-sm-3"><img src="./images/media-images/thumbs/summer-code-camp-1.jpg" title="Vanessa showing the kids around the office." /></div>
                 <div class="col-sm-3"><img src="./images/media-images/thumbs/summer-code-camp-2.jpg"></img></div>
                 <div class="col-sm-3"><img src="./images/media-images/thumbs/summer-code-camp-3.jpg"></img></div>
                 <div class="col-sm-3"><img src="./images/media-images/thumbs/summer-code-camp-4.jpg"></img></div>
             </div>
-            
-              <div class="row image-row">
+            <div class="row image-row">
                 <div class="col-sm-3"><img src="./images/media-images/thumbs/summer-code-camp-5.jpg"></img></div>
                 <div class="col-sm-3"><img src="./images/media-images/thumbs/summer-code-camp-6.jpg"></img></div>
                 <div class="col-sm-3"><img src="./images/media-images/thumbs/summer-code-camp-7.jpg"></img></div>
@@ -147,6 +146,9 @@
                 <div class="col-sm-3"><img src="./images/media-images/thumbs/summer-code-camp-24.jpg"></img></div>
             </div><br />
             
+            <div align="center">
+                <h2>Videos from the Class of 2016!</h2>
+            </div>
             <div class="row">
                 <div class="col-sm-6" align="center">
                     <iframe src="https://player.vimeo.com/video/171633932" width="480" height="270" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfulscreen></iframe>
@@ -154,8 +156,7 @@
                 <div class="col-sm-6" align="center">
                     <iframe src="https://player.vimeo.com/video/171639365" width="480" height="270" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfulscreen></iframe>
                 </div>
-            </div><br />
-            
+            </div><br />            
             <div class="row">
                 <div class="col-sm-6" align="center">
                     <iframe src="https://player.vimeo.com/video/171640279" width="480" height="270" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfulscreen></iframe>
@@ -251,17 +252,45 @@
     </footer>
 </div>
 
+<div class="modal fade" tabindex="-1" role="dialog" id="picture-modal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
 $(function() {
     var image_arr = $('.image-row img'),
         image_counter = 0;
         
-    alert('array count' + image_arr.length);
-    
-    $('#image-flipper').src = image_arr[0].src;    
+    $('#image-flipper').attr('src', $(image_arr[0]).attr('src'));
     setInterval(function() {
-        
-    }, 3000);
+        image_counter++;
+
+        if (image_counter > image_arr.length) {
+            image_counter = 0;
+        }
+        $('#image-flipper').attr('src', $(image_arr[image_counter]).attr('src'));    
+    }, 5000);
+
+    $('.image-row img').on('click', function(ev) {
+        var image_src = $(ev.currentTarget).attr('src').replace('/thumbs', ''),
+            image_title = $(ev.currentTarget).attr('title');
+
+        $('#picture-modal .modal-title').html(image_title);
+        $('#picture-modal .modal-body').html('<img src="' + image_src + '" />')
+        $('#picture-modal').modal('show');
+    });
 });
 </script>
 
