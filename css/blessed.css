@@ -19,3 +19,7 @@
 .btn-default:focus {
   background-color: red;
 }
+
+.more{
+  float: right;
+}
