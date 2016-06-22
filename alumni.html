@@ -79,7 +79,7 @@
             <div align="row">
                 <div class="col-sm-4">
                     <div align="center" style="max-height:400px; overflow: hidden;">
-                        <img src="./images/coding_camp_alumni_2016/Aylin.jpg" />
+                        <img src="./images/coding_camp_alumni_2016/Aylin.jpg" data-hover-image="./images/coding_camp_alumni_2016/Aylin-funny.jpg" />
                     </div>
                     <p class="alumni">Aylin Orozco </p>
                     <div class="alumni2">Favorite Food: Sushi  <br /></div>
@@ -88,7 +88,7 @@
                 </div>
                 <div class="col-sm-4">
                     <div align="center" style="max-height:400px; overflow: hidden;">
-                        <img src="./images/coding_camp_alumni_2016/Caleb.jpg" />
+                        <img src="./images/coding_camp_alumni_2016/Caleb.jpg" data-hover-image="./images/coding_camp_alumni_2016/Caleb-funny.jpg" />
                     </div>
                      <p class="alumni">Caleb Talavera<br /></p>
                     <div class="alumni2">Favorite Food: Tacos<br /></div>
@@ -97,7 +97,7 @@
                 </div>
                 <div class="col-sm-4">
                     <div align="center" style="max-height:400px; overflow: hidden;">
-                        <img src="./images/coding_camp_alumni_2016/Erika.jpg" />
+                        <img src="./images/coding_camp_alumni_2016/Erika.jpg" data-hover-image="./images/coding_camp_alumni_2016/Erika-funny.jpg" />
                     </div>
                      <p class="alumni">Erika Charco<br /></p>
                     <div class="alumni2">Favorite Food: <br /></div>
@@ -106,7 +106,7 @@
                 </div>
                 <div class="col-sm-4">
                     <div align="center" style="max-height:400px; overflow: hidden;">
-                        <img src="./images/coding_camp_alumni_2016/Rosalinda.jpg" />
+                        <img src="./images/coding_camp_alumni_2016/Rosalinda.jpg" data-hover-image="./images/coding_camp_alumni_2016/Rosalinda-funny.jpg" />
                     </div>
                      <p class="alumni">Rosalinda Pineda<br /></p>
                     <div class="alumni2">Favorite Food: Hot boneless wings <br /></div>
@@ -115,7 +115,7 @@
                 </div>
                 <div class="col-sm-4">
                     <div align="center" style="max-height:400px; overflow: hidden;">
-                        <img src="./images/coding_camp_alumni_2016/Santiago.jpg" />
+                        <img src="./images/coding_camp_alumni_2016/Santiago.jpg" data-hover-image="./images/coding_camp_alumni_2016/Santiago-funny.jpg" />
                     </div>
                      <p class="alumni">Santiago Alva<br /></p>
                     <div class="alumni2">Favorite Food: Tacos <br /></div>
@@ -124,7 +124,7 @@
                 </div>
                 <div class="col-sm-4">
                     <div align="center" style="max-height:400px; overflow: hidden;">
-                        <img src="./images/coding_camp_alumni_2016/Sheyla.jpg" />
+                        <img src="./images/coding_camp_alumni_2016/Sheyla.jpg" data-hover-image="./images/coding_camp_alumni_2016/Sheyla-funny.jpg" />
                     </div>
                      <p class="alumni">Sheyla Carillo<br /></p>
                     <div class="alumni2">Favorite Food: Burgers <br /></div>
@@ -133,7 +133,7 @@
                 </div>
                 <div class="col-sm-4">
                     <div align="center" style="max-height:400px; overflow: hidden;">
-                        <img src="./images/coding_camp_alumni_2016/Veronica.jpg" />
+                        <img src="./images/coding_camp_alumni_2016/Veronica.jpg" data-hover-image="./images/coding_camp_alumni_2016/Veronica-funny.jpg" />
                     </div>
                      <p class="alumni">Veronica Esquivel<br /></p>
                     <div class="alumni2">Favorite Food: Pizza <br /></div>
@@ -142,7 +142,7 @@
                 </div>
                 <div class="col-sm-4">
                     <div align="center" style="max-height:400px; overflow: hidden;">
-                        <img src="./images/coding_camp_alumni_2016/Victoria.jpg" />
+                        <img src="./images/coding_camp_alumni_2016/Victoria.jpg" data-hover-image="./images/coding_camp_alumni_2016/Victoria-funny.jpg" />
                     </div>
                      <p class="alumni">Victoria Esquivel<br /></p>
                     <div class="alumni2">Favorite Food:Tacos <br /></div>
@@ -236,6 +236,23 @@
         </div>
     </footer>
 </div>
+
+<script>
+$(function() {
+
+    var old_image = '';
+
+    $('.col-sm-4 img').on('mouseenter', function(ev) {
+        var new_image = $(ev.currentTarget).data('hover-image');
+        
+        old_image = $(ev.currentTarget).attr('src');
+        $(ev.currentTarget).attr('src', new_image);
+    });
+    $('.col-sm-4 img').on('mouseleave', function(ev) {
+        $(ev.currentTarget).attr('src', old_image);
+    });
+});
+</script>
 
 </body>
 </html>
