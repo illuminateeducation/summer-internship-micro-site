@@ -1,25 +1,21 @@
-.Christopher{
-    margin-top:-210px;
+.Christopher {
+    margin-top: -210px;
     text-align: center;
-    
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 8px 8px 18px;
+    border-radius: 8px;
+    border: 1px solid #000;
 }
-
-.Christopher h2 {
-    color: #09565B;
-    text-align: center;
-    background-color: rgba(255,255,255,0.4);
+.Christopher h2 { 
+    color: #fff;
+    text-shadow: 1px 0px 3px rgba(0, 0, 0, 0.5);
+    padding: 0px;
+    margin: 0px;
 }
-
-
-.Christopher .btn-default:hover
-{
+.Christopher .btn-default:hover {
   background-color: red;
 }
-
 .btn-default:focus {
   background-color: red;
-}
-
-.more{
-  float: right;
 }

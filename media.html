@@ -14,7 +14,9 @@
     <link rel="stylesheet" href="./css/main.css" />
 
     <link rel="shortcut icon" href="https://1q0cd7h1h713a1mrickm0gew-wpengine.netdna-ssl.com/favicon.ico" type="image/x-icon"/>
-    <title>Summer Code Camp - Illuminate Education</title>
+
+    <title>Summer Camp Internship Media</title>
+    <meta name="description" content="Check out all the media files, photos and videos, from past internships." />
 </head>
 <body>
 
@@ -75,45 +77,41 @@
             </div>
         </div>
       
-        <!--
-        <div class="row header-text">
-            <div class="col-sm-6">Class of 2016!</div>
-            <div class="col-sm-6">Summer intership </div>
-        </div>
-        -->
-
         <div class="container"><br />
             <div class="row" style="background-color: rgba(255,255,255,0.25); border-radius: 10px; padding: 10px;">
                 <div class="col-sm-6">
                     <iframe src="https://player.vimeo.com/video/171632862" width="480"  height="270" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfulscreen></iframe>
                 </div>
                 <div class="col-sm-6">
-                    This video is going to show one of our student's work and what they have done. In the video the student 
-                    is going to give some reasons  about why the user should come to the summer intership for more 
-                    information watch the video.
+                    This video shows Santiago's mock for the page he designs. He talks about this thought process
+                    and how he designed the page. Students will go through the mockup process before they even
+                    start coding. You can see additional videos of other students going through the same process.
+                    <br /><br />
+
+                    Be sure to check out the extensive photo gallery of our interns. Check out all the activities
+                    that go on during the Illuminate Summer Camp, and illustrates what they accomplished. We hope you
+                    enjoy the videos, images and work of our talented interns. If you have additional questions,
+                    please check the <a href="./about.html">about section</a>, thank you.
                 </div>
             </div><br />
-              
-            <div class="row" style="background-color: rgba(255,255,255,0.25); border-radius: 10px; padding: 10px;">
-                <div class="col-sm-6"> 
-                    In this video you are going to see intership memories and pictures. It is a picture video of all that we 
-                    have acomplished on the 2016 summer intership at Illuminate Ed.We hope you like the video and enjoy the 
-                    work of our interns.If you have questions please chek the about section.Thankyou for checking our website.
-                </div>
-                <div class="col-sm-6">
-                    <div align="right"><img id="image-flipper" /></div>
-                </div>
-            </div><br />
-            
+                          
             <div align="center">
                 <h2 style="margin-bottom: 0px; padding-bottom: 0px;">Photos from the Class of 2016!</h2>
                 <small>Click a photo to enlarge it.</small>
             </div>
+
             <div class="row image-row">
-                <div class="col-sm-3"><img src="./images/media-images/thumbs/summer-code-camp-1.jpg" title="Vanessa showing the interns around the office." /></div>
-                <div class="col-sm-3"><img src="./images/media-images/thumbs/summer-code-camp-2.jpg" title="Interns looking around the office." /></div>
-                <div class="col-sm-3"><img src="./images/media-images/thumbs/summer-code-camp-3.jpg" title="Vanessa giving the interns a tour." /></div>
-                <div class="col-sm-3"><img src="./images/media-images/thumbs/summer-code-camp-4.jpg" title="Interns getting ready to setup their chromebooks." /></div>
+                <div class="col-sm-3">
+                    <img src="./images/media-images/thumbs/summer-code-camp-1.jpg" title="Vanessa showing the interns around the office." />
+                    <img src="./images/media-images/thumbs/summer-code-camp-3.jpg" title="Vanessa giving the interns a tour." />
+                </div>
+                <div class="col-sm-3">
+                    <img src="./images/media-images/thumbs/summer-code-camp-2.jpg" title="Interns looking around the office." />
+                    <img src="./images/media-images/thumbs/summer-code-camp-4.jpg" title="Interns getting ready to setup their chromebooks." />
+                </div>
+                <div class="col-sm-6">
+                    <img id="image-flipper" />
+                </div>
             </div>
             <div class="row image-row">
                 <div class="col-sm-3"><img src="./images/media-images/thumbs/summer-code-camp-5.jpg" title="Rob teaching the class." /></div>
@@ -270,20 +268,21 @@
 
 <script>
 $(function() {
-    var image_arr = $('.image-row img'),
+    var image_arr = $('.image-row .col-sm-3 img'),
         image_counter = 0;
         
-    $('#image-flipper').attr('src', $(image_arr[0]).attr('src'));
+    $('#image-flipper').attr('src', $(image_arr[0]).attr('src').replace('/thumbs', ''));
     setInterval(function() {
         image_counter++;
 
         if (image_counter > image_arr.length) {
             image_counter = 0;
         }
-        $('#image-flipper').attr('src', $(image_arr[image_counter]).attr('src'));    
+        var image_src = $(image_arr[image_counter]).attr('src').replace('/thumbs', '');
+        $('#image-flipper').attr('src', image_src);    
     }, 5000);
 
-    $('.image-row img').on('click', function(ev) {
+    $('.image-row .col-sm-3 img').on('click', function(ev) {
         var image_src = $(ev.currentTarget).attr('src').replace('/thumbs', ''),
             image_title = $(ev.currentTarget).attr('title');
 

@@ -14,7 +14,10 @@
     <link rel="stylesheet" href="./css/main.css" />
 
     <link rel="shortcut icon" href="https://1q0cd7h1h713a1mrickm0gew-wpengine.netdna-ssl.com/favicon.ico" type="image/x-icon"/>
-    <title>Summer Code Camp - Illuminate Education</title> 
+
+    <title>Apply for an Illuminate Internship</title>
+    <meta name="description" content="Do you want to be one of our next interns? Fill out this easy contact form to get on the list." />
+
     <style>
         .contact_box {
             border: 1px solid grey;
@@ -81,105 +84,88 @@
         </div>
 
         <div class="container">
-            
             <div class="row">
                 <div class="col-sm-12">
-                    <br />
-                    <h1>How To Apply</h1>
-                    <p>If you are interested in applying for this internship, please fill out this form below. We accept students that are currently enrolled in high school. We accept new students on a rolling basis and we will let you know when applications are open!</p>
+                    <br /><h1>How To Apply</h1>
+                    <p>
+                        If you are interested in applying for this internship, please fill out this 
+                        form below. We accept students that are currently enrolled in high school. 
+                        We accept new students on a rolling basis and we will let you know when 
+                        applications are open!
+                    </p>
                 </div>
-            <div class="col-sm-6">
-    <form name="myForm" onsubmit="return validateForm();" action="mailato:vanessa+mom@illuminateed.net" method="post" enctype="text/plain">
-      <div class="form-group">
-        <label for="First and Last Name">First and Last Name</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="First and Last Name">
-      </div>
-     <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" name="email">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Phone Number</label>
-        <input type="tel" class="form-control" id="exampleInputTel" placeholder="Phone Number" name="phonenumber">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Name of District</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Name of District" name="nameofdistrict">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Name of School</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Name of School" name="nameofschool">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Grade</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Grade" name="grade">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Why Interested?</label>
-       <textarea rows="4" cols="50" name="whyintrested" class="form-control">
-    </textarea>
-      </div>
-      <button type="submit" class="btn btn-default">Submit</button>
-    </form> 
-    <script>
-    function validateForm() {
-        var x = document.forms["myForm"]["email"].value;
-        var atpos = x.indexOf("@");
-        var dotpos = x.lastIndexOf(".");
-        if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
-            alert("Not a valid e-mail address");
-            return false;
-        }
-        var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;  
-      if(!document.forms["myForm"]["phonenumber"].value.match(phoneno)) {
-           alert("Not a valid phone number");
-            return false;
-      }
-    }
-    </script>
             </div>
             <div class="row">
+                <div class="col-sm-6">
+                    <form name="myForm" onsubmit="return validateForm();" action="./send_application.php" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="apply_name">Your Name:</label>
+                        <input type="text" class="form-control" id="apply_name" name="apply_name" />
+                    </div>
+                    <div class="form-group">
+                        <label for="apply_email">Email Address:</label>
+                        <input type="email" class="form-control" id="apply_email" name="apply_email">
+                    </div>
+                    <div class="form-group">
+                        <label for="apply_phone_number">Phone Number:</label>
+                        <input type="tel" class="form-control" id="apply_phone_number" name="apply_phone_number">
+                    </div>
+                    <div class="form-group">
+                        <label for="apply_school">School Name:</label>
+                        <input type="text" class="form-control" id="apply_school" name="apply_school">
+                    </div>
+                    <div class="form-group">
+                        <label for="apply_grade">Grade:</label>
+                        <input type="text" class="form-control" id="apply_grade" name="apply_grade">
+                    </div>
+                    <div class="form-group">
+                        <label for="apply_reason">Why Are You Interested in the Internship?</label>
+                        <textarea rows="4" cols="50" class="form-control" id="apply_reason" name="apply_reason"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-default">Send Application</button>
+                    </form>
+
+                    <script>
+                    function validateForm() {
+                        var x = document.forms["myForm"]["apply_email"].value;
+                        var atpos = x.indexOf("@");
+                        var dotpos = x.lastIndexOf(".");
+
+                        if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+                            alert("Not a valid e-mail address");
+                            return false;
+                        }
+                        var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;  
+                        if (!document.forms["myForm"]["apply_phone_number"].value.match(phoneno)) {
+                            alert("Not a valid phone number");
+                            return false;
+                        }
+                    }
+                    </script>
+                </div>
                 <div class="col-sm-6 ">
+                    <label>&nbsp;</label>
                     <div class="panel panel-default">
-                      <div class="panel-heading">
-                        <h3 class="panel-title">Any Questions?</h3>
-                      </div>
-                      <div class="panel-body">
-                         <p> Contact:(949) 933-8287 </p>
-                          <p> Email: <a href="mailto:vanessa@illuminateed.net"> info@illuminateed.net</a>
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Any Additional Questions?</h3>
+                        </div>
+                        <div class="panel-body">
+                            Contact: (949) 933-8287<br />
+                            Email: <a href="mailto:info@illuminateed.com">info@illuminateed.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <img src="./images/learn-more-right-sidebar.jpg" class="img-rounded" />
+                </div>
+                <div class="col-sm-6" align="center">
+                    <br />
+                    <p>
+                        Thank you for visitng our website, we hope to contact you soon! We are eager 
+                        to see your coding skills that you can contribute to Illuminate Education.
                     </p>
-                      </div>
-                    </div>
                 </div>
-                <div class="col-sm-6">
-                <img src="./images/learn-more-right-sidebar.jpg">
-                </div>
-                
-                
-                <div class="col-sm-6">
-                <br>
-                    <div class="panel panel-default">
-                      <div class="panel-heading">
-                        <h3 class="panel-title">CEO- Lane Rankin</h3>
-                      </div>
-                      <div class="panel-body">
-                        <div class="row">
-                          <div class="col-sm-6 col-md-4">
-                              <img src= "http://www.cioreview.com/news_new/companyimages/ocoyh.EducationCIOPg54_250.jpg"  alt="...">
-                          </div>
-                           <div class="col-sm-6 col-md-8">
-                            <h4><b>Closing Statement</b></h4>
-                      
-                      
-                    <p> Thank you for visitng our website, we hope to contact you soon! We are eager to see your coding skills that you can contribute to Illuminate.
-                      </p>
-                    </div>
-                           </div>
-                      </div>
-                    </div>
-                </div>
-            <div class="row">
-               
+            </div>
         </div>
     </section>
 
